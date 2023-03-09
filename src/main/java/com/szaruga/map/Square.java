@@ -1,20 +1,20 @@
 package com.szaruga.map;
 
 public class Square {
-    private boolean isOccupied;
+    private boolean hasShip;
     private boolean isHit;
 
     public Square() {
-        isOccupied = false;
+        hasShip = false;
         isHit = false;
     }
 
-    public boolean isOccupied() {
-        return isOccupied;
+    public boolean hasShip() {
+        return hasShip;
     }
 
-    public void setOccupied(boolean occupied) {
-        isOccupied = occupied;
+    public void setHasShip(boolean hasShip) {
+        this.hasShip = hasShip;
     }
 
     public boolean isHit() {

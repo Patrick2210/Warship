@@ -4,23 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ce69021-9b5a-4e86-b7ae-f7b6cd2a03d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/szaruga/game/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/szaruga/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/szaruga/map/Map.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/szaruga/map/Square.java" afterDir="false" />
+    <list default="true" id="6ce69021-9b5a-4e86-b7ae-f7b6cd2a03d2" name="Changes" comment="Warship Game">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/szaruga/map/WarshipMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/szaruga/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/szaruga/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/szaruga/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/szaruga/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/szaruga/map/Map.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/szaruga/map/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/szaruga/map/Square.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +65,18 @@
       <option name="presentableId" value="Default" />
       <updated>1678268471270</updated>
     </task>
+    <task id="LOCAL-00001" summary="Warship Game">
+      <created>1678284567905</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678284567905</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Warship Game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Warship Game" />
   </component>
 </project>

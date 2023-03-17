@@ -8,7 +8,7 @@ public class WarshipMap {
 
     public WarshipMap(int inputWidth, int inputHeight) {
         try {
-            if (inputWidth <= 25 && inputHeight <= 25) {
+            if (inputWidth <= 26 && inputHeight <= 26) {
                 this.width = inputWidth;
                 this.height = inputHeight;
                 table = new Object[height][width];
@@ -16,24 +16,80 @@ public class WarshipMap {
                     for (int col = 0; col < width; col++) {
                         if (row == 0) {
                             table[row][col] = "A" + col;
-                        } else if (row == 1) {
+                        }
+                        if (row == 1) {
                             table[row][col] = "B" + col;
-                        } else if (row == 2) {
+                        }
+                        if (row == 2) {
                             table[row][col] = "C" + col;
-                        } else if (row == 3) {
+                        }
+                        if (row == 3) {
                             table[row][col] = "D" + col;
-                        } else if (row == 4) {
+                        }
+                        if (row == 4) {
                             table[row][col] = "E" + col;
-                        } else if (row == 5) {
+                        }
+                        if (row == 5) {
                             table[row][col] = "F" + col;
-                        } else if (row == 6) {
+                        }
+                        if (row == 6) {
                             table[row][col] = "G" + col;
-                        } else if (row == 7) {
+                        }
+                        if (row == 7) {
                             table[row][col] = "H" + col;
-                        } else if (row == 8) {
+                        }
+                        if (row == 8) {
                             table[row][col] = "I" + col;
-                        } else if (row == 9) {
+                        }
+                        if (row == 9) {
                             table[row][col] = "J" + col;
+                        }
+                        if (row == 10) {
+                            table[row][col] = "K" + col;
+                        }
+                        if (row == 11) {
+                            table[row][col] = "L" + col;
+                        }
+                        if (row == 12) {
+                            table[row][col] = "M" + col;
+                        }
+                        if (row == 13) {
+                            table[row][col] = "N" + col;
+                        }
+                        if (row == 14) {
+                            table[row][col] = "O" + col;
+                        }
+                        if (row == 15) {
+                            table[row][col] = "P" + col;
+                        }
+                        if (row == 16) {
+                            table[row][col] = "Q" + col;
+                        }
+                        if (row == 17) {
+                            table[row][col] = "R" + col;
+                        }
+                        if (row == 18) {
+                            table[row][col] = "S" + col;
+                        }
+                        if (row == 19) {
+                            table[row][col] = "T" + col;
+                        }
+                        if (row == 20) {
+                            table[row][col] = "U" + col;
+                        }
+                        if (row == 21) {
+                            table[row][col] = "V" + col;
+                        }
+                        if (row == 22) {
+                            table[row][col] = "W" + col;
+                        }
+                        if (row == 23) {
+                            table[row][col] = "X" + col;
+                        }
+                        if (row == 24) {
+                            table[row][col] = "Y" + col;
+                        } else if (row == 25) {
+                            table[row][col] = "Z" + col;
                         }
                     }
                 }

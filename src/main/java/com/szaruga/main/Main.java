@@ -6,9 +6,9 @@ import com.szaruga.map.WarshipMap;
 public class Main {
     public static void main(String[] args) {
 
-        WarshipMap map = new WarshipMap(10, 10);
-        Game game = new Game();
-        game.play(map);
+        WarshipMap map = new WarshipMap(10 , 10);
+        Game game = new Game(map);
+        game.play();
 
 
 

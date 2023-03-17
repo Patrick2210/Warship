@@ -8,6 +8,10 @@ import java.util.Scanner;
 public class Game {
     WarshipMap map;
 
+    public Game(WarshipMap map) {
+        this.map = map;
+    }
+
 
     private void start() {
         System.out.println("Start game please press: NUMBER ZERO ");
@@ -51,9 +55,9 @@ public class Game {
         Scanner row = new Scanner(System.in);
         Scanner col = new Scanner(System.in);
         System.out.println("Ready to set up One Mast ship?");
-        System.out.println("Press Capital Letter for row:");
+        System.out.println("Letter for row: ");
         int r = converter(row.next());
-        System.out.println("Number for column");
+        System.out.println("Number for column: ");
         int c = col.nextInt();
 
         Object[][] oneMastShip = map.setOneMast(r, c);
@@ -63,8 +67,7 @@ public class Game {
     //private Square setTwoMastShip(WarshipMap map){}
     //private Square setThreeMastShip(WarshipMap map){}
     //private Square setFourMastShip(WarshipMap map){}
-    public void play(WarshipMap map) {
-        this.map = map;
+    public void play() {
         Scanner scanner = new Scanner(System.in);
         start();
 
@@ -80,14 +83,12 @@ public class Game {
                 int j = scanner.nextInt();
                 if (j == 1) {
                     map.show();
-                    break;
                 }
                 if (j == 2) {
                     try {
                         //TODO zrobic metode putShipOnMap(oneMastShip();)
                         // + zanim wsadze to mape sprawidzc czy squere isEmpty
                         oneMastShip();
-                        break;
                     } catch (InputMismatchException e) {
                         e.printStackTrace();
                     }

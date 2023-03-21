@@ -18,9 +18,8 @@ public class Game {
 
     }
 
-
-    private void start() { //TODO to zostawic
-        System.out.println(START.string);
+    private void start() {
+        System.out.println(WELCOME.string + START.string);
     }
 
     private Integer rowConverter(String letter) {
@@ -129,24 +128,26 @@ public class Game {
             System.out.println(HIT_SHIP.string);
 
         } else if (!map.getShip(r, c)) {
-            System.out.println(MISSED_SHIP.string);
             map.setHit(false);
-            //TODO isHit = false;
+            System.out.println(MISSED_SHIP.string);
         }
     }
 
+    public void busted(int row, int col) {
+
+    }
+
+    //TODO zrobic metode ktora wykorzysta isHit() i ustawi nam komurke X -> zatopiony / O -> pudlo
     public void play() {
         if (map != null) {
             Scanner scanner = new Scanner(System.in);
             start();
 
             int iterator = 0;
-            while (iterator <= 5) {
-
-                int i = scanner.nextInt();
+            int i = scanner.nextInt();
+            do {
                 if (i == 0) {
-                    System.out.println(WELCOME.string + PRESS_ONE.string + PRESS_TWO.string + PRESS_THREE.string);
-
+                    System.out.println(PRESS_ONE.string + PRESS_TWO.string + PRESS_THREE.string);
                     int j = scanner.nextInt();
                     if (j == 1) {
                         map.showMap();
@@ -156,15 +157,13 @@ public class Game {
                     }
                     if (j == 3) {
                         shoot();
-                    } else if (j != 1 || j != 2 || j != 3) {
-                        System.out.println(PRESS_ZERO.string);
+                        //TODO zrobic aby bylo press zero na powrot do menu
                     }
-
+                    iterator++;
                 } else if (i != 0) {
-                    System.out.println(WRONG_BUTTON.string);
+                    System.out.println(PRESS_ZERO.string);
                 }
-                iterator++;
-            }
+            } while (iterator <= 5);
         } else System.out.println(GOODBYE.string);
     }
 }

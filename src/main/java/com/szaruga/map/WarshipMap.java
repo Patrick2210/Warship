@@ -56,5 +56,4 @@ public class WarshipMap {
             System.out.println();
         }
     }
-    //TODO zrobic metode ktora wykorzysta isHit() i ustawi nam komurke X -> zatopiony / O -> pudlo
 }

@@ -20,7 +20,7 @@ public class Game {
 
 
     private void start() { //TODO to zostawic
-        System.out.println("Start game please press: NUMBER ZERO ");
+        System.out.println(START.string);
     }
 
     private Integer rowConverter(String letter) {
@@ -107,10 +107,10 @@ public class Game {
     private void shipPosition() {
         Scanner row = new Scanner(System.in);
         Scanner col = new Scanner(System.in);
-        System.out.println("Ready to set up ship?");
-        System.out.println("Letter for row: ");
+        System.out.println(RDY_SHIP.string);
+        System.out.println(ROW.string);
         int r = rowConverter(row.next());
-        System.out.println("Number for column: ");
+        System.out.println(COL.string);
         int c = col.nextInt();
         map.setShip(r, c);
     }
@@ -118,18 +118,18 @@ public class Game {
     private void shoot() {
         Scanner row = new Scanner(System.in);
         Scanner col = new Scanner(System.in);
-        System.out.println("Ready to shoot?");
-        System.out.println("Letter for row: ");
+        System.out.println(RDY_SHOOT.string);
+        System.out.println(ROW.string);
         int r = rowConverter(row.next());
-        System.out.println("Number for column: ");
+        System.out.println(COL.string);
         int c = col.nextInt();
 
         if (map.getShip(r, c)) {
             map.setHit(true);
-            System.out.println("You hit ship!");
+            System.out.println(HIT_SHIP.string);
 
         } else if (!map.getShip(r, c)) {
-            System.out.println("You missed...");
+            System.out.println(MISSED_SHIP.string);
             map.setHit(false);
             //TODO isHit = false;
         }
@@ -145,8 +145,7 @@ public class Game {
 
                 int i = scanner.nextInt();
                 if (i == 0) {
-                    System.out.println("Welcome in WarShips\n" + "Press: Number 1 -> Show map\n"
-                            + "Press: Number 2 -> Set up your fleet\n" + "Press: Number 3 -> Shoot them all!");
+                    System.out.println(WELCOME.string + PRESS_ONE.string + PRESS_TWO.string + PRESS_THREE.string);
 
                     int j = scanner.nextInt();
                     if (j == 1) {
@@ -158,11 +157,11 @@ public class Game {
                     if (j == 3) {
                         shoot();
                     } else if (j != 1 || j != 2 || j != 3) {
-                        System.out.println("Press Zero to show menu.");
+                        System.out.println(PRESS_ZERO.string);
                     }
 
                 } else if (i != 0) {
-                    System.out.println("Wrong button. Press NUMBER ZERO");
+                    System.out.println(WRONG_BUTTON.string);
                 }
                 iterator++;
             }

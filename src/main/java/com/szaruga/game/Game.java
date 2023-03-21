@@ -1,16 +1,19 @@
 package com.szaruga.game;
 
+import static enums.Strings.*;
+
 import com.szaruga.map.WarshipMap;
 
 import java.util.Scanner;
 
+import static enums.CapitalLetters.*;
+
 public class Game {
     private WarshipMap map;
 
-
     public Game(WarshipMap map) {
         if (map.getHeight() > 25 && map.getWidth() > 25) {
-            System.out.println("Please fix size of map");
+            System.out.println(FIX_SIZE.string);
         } else this.map = map;
 
     }
@@ -21,81 +24,81 @@ public class Game {
     }
 
     private Integer rowConverter(String letter) {
-        if (letter.equals("A")) {
+        if (letter.equals(A.letter)) {
             return 0;
         }
-        if (letter.equals("B")) {
+        if (letter.equals(B.letter)) {
             return 1;
         }
-        if (letter.equals("C")) {
+        if (letter.equals(C.letter)) {
             return 2;
         }
-        if (letter.equals("D")) {
+        if (letter.equals(D.letter)) {
             return 3;
         }
-        if (letter.equals("E")) {
+        if (letter.equals(E.letter)) {
             return 4;
         }
-        if (letter.equals("F")) {
+        if (letter.equals(F.letter)) {
             return 5;
         }
-        if (letter.equals("G")) {
+        if (letter.equals(G.letter)) {
             return 6;
         }
-        if (letter.equals("H")) {
+        if (letter.equals(H.letter)) {
             return 7;
         }
-        if (letter.equals("I")) {
+        if (letter.equals(I.letter)) {
             return 8;
         }
-        if (letter.equals("J")) {
+        if (letter.equals(J.letter)) {
             return 9;
         }
-        if (letter.equals("K")) {
+        if (letter.equals(K.letter)) {
             return 10;
         }
-        if (letter.equals("L")) {
+        if (letter.equals(L.letter)) {
             return 11;
         }
-        if (letter.equals("M")) {
+        if (letter.equals(M.letter)) {
             return 12;
         }
-        if (letter.equals("N")) {
+        if (letter.equals(N.letter)) {
             return 13;
         }
-        if (letter.equals("O")) {
+        if (letter.equals(O.letter)) {
             return 14;
         }
-        if (letter.equals("P")) {
+        if (letter.equals(P.letter)) {
             return 15;
         }
-        if (letter.equals("Q")) {
+        if (letter.equals(Q.letter)) {
             return 16;
         }
-        if (letter.equals("R")) {
+        if (letter.equals(R.letter)) {
             return 17;
         }
-        if (letter.equals("S")) {
+        if (letter.equals(S.letter)) {
             return 18;
         }
-        if (letter.equals("T")) {
+        if (letter.equals(T.letter)) {
             return 19;
         }
-        if (letter.equals("U")) {
+        if (letter.equals(U.letter)) {
             return 20;
         }
-        if (letter.equals("V")) {
+        if (letter.equals(V.letter)) {
             return 21;
         }
-        if (letter.equals("W")) {
+        if (letter.equals(W.letter)) {
             return 22;
         }
-        if (letter.equals("X")) {
+        if (letter.equals(X.letter)) {
             return 23;
         }
-        if (letter.equals("Y")) {
+        if (letter.equals(Y.letter)) {
             return 24;
-        } else if (letter.equals("Z")) {
+        } else if (letter.equals(Z.letter)) {
             return 25;
         }
         return 0;
@@ -163,6 +166,6 @@ public class Game {
                 }
                 iterator++;
             }
-        } else System.out.println("Goodbye");
+        } else System.out.println(GOODBYE.string);
     }
 }

@@ -2,22 +2,25 @@ package com.szaruga.game;
 
 import com.szaruga.map.WarshipMap;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Game {
-    WarshipMap map;
+    private WarshipMap map;
+
 
     public Game(WarshipMap map) {
-        this.map = map;
+        if (map.getHeight() > 25 && map.getWidth() > 25) {
+            System.out.println("Please fix size of map");
+        } else this.map = map;
+
     }
 
 
-    private void start() {
+    private void start() { //TODO to zostawic
         System.out.println("Start game please press: NUMBER ZERO ");
     }
 
-    private Integer converter(String letter) {
+    private Integer rowConverter(String letter) {
         if (letter.equals("A")) {
             return 0;
         }
@@ -96,59 +99,70 @@ public class Game {
             return 25;
         }
         return 0;
-
     }
 
-    private Object[][] oneMastShip() {
+    private void shipPosition() {
         Scanner row = new Scanner(System.in);
         Scanner col = new Scanner(System.in);
-        System.out.println("Ready to set up One Mast ship?");
+        System.out.println("Ready to set up ship?");
         System.out.println("Letter for row: ");
-        int r = converter(row.next());
+        int r = rowConverter(row.next());
+        System.out.println("Number for column: ");
+        int c = col.nextInt();
+        map.setShip(r, c);
+    }
+
+    private void shoot() {
+        Scanner row = new Scanner(System.in);
+        Scanner col = new Scanner(System.in);
+        System.out.println("Ready to shoot?");
+        System.out.println("Letter for row: ");
+        int r = rowConverter(row.next());
         System.out.println("Number for column: ");
         int c = col.nextInt();
 
-        Object[][] oneMastShip = map.setOneMast(r, c);
-        return oneMastShip;
+        if (map.getShip(r, c)) {
+            map.setHit(true);
+            System.out.println("You hit ship!");
+
+        } else if (!map.getShip(r, c)) {
+            System.out.println("You missed...");
+            map.setHit(false);
+            //TODO isHit = false;
+        }
     }
 
-    //private Square setTwoMastShip(WarshipMap map){}
-    //private Square setThreeMastShip(WarshipMap map){}
-    //private Square setFourMastShip(WarshipMap map){}
     public void play() {
-        Scanner scanner = new Scanner(System.in);
-        start();
+        if (map != null) {
+            Scanner scanner = new Scanner(System.in);
+            start();
 
-        int iterator = 0;
+            int iterator = 0;
+            while (iterator <= 5) {
 
-        while (iterator <= 3) {
+                int i = scanner.nextInt();
+                if (i == 0) {
+                    System.out.println("Welcome in WarShips\n" + "Press: Number 1 -> Show map\n"
+                            + "Press: Number 2 -> Set up your fleet\n" + "Press: Number 3 -> Shoot them all!");
 
-            int i = scanner.nextInt();
-            if (i == 0) {
-                System.out.println("Welcome in WarShips\n" + "Press: Number 1 -> Show map\n"
-                        + "Press: Number 2 -> Set up your fleet");
-
-                int j = scanner.nextInt();
-                if (j == 1) {
-                    map.show();
-                }
-                if (j == 2) {
-                    try {
-                        //TODO zrobic metode putShipOnMap(oneMastShip();)
-                        // + zanim wsadze to mape sprawidzc czy squere isEmpty
-                        oneMastShip();
-                    } catch (InputMismatchException e) {
-                        e.printStackTrace();
+                    int j = scanner.nextInt();
+                    if (j == 1) {
+                        map.showMap();
                     }
-                } else if (j != 1 || j != 2) {
-                    System.out.println("Press correct button");
+                    if (j == 2) {
+                        shipPosition();
+                    }
+                    if (j == 3) {
+                        shoot();
+                    } else if (j != 1 || j != 2 || j != 3) {
+                        System.out.println("Press Zero to show menu.");
+                    }
+
+                } else if (i != 0) {
+                    System.out.println("Wrong button. Press NUMBER ZERO");
                 }
-
-            } else if (i != 0) {
-                System.out.println("Wrong button. Press NUMBER ZERO");
-
+                iterator++;
             }
-            iterator++;
-        }
+        } else System.out.println("Goodbye");
     }
 }

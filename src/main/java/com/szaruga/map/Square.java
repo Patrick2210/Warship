@@ -1,12 +1,20 @@
 package com.szaruga.map;
 
 public class Square {
+    private boolean isEmpty;
     private boolean hasShip;
     private boolean isHit;
 
     public Square() {
+        isEmpty = true;
         hasShip = false;
-        isHit = false;
+    }
+    public boolean isEmpty() {
+        return isEmpty;
+    }
+
+    public void setEmpty(boolean empty) {
+        isEmpty = empty;
     }
 
     public boolean hasShip() {

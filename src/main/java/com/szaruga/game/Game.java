@@ -142,8 +142,6 @@ public class Game {
         }
     }
 
-
-    //TODO zrobic metode ktora wykorzysta isHit() i ustawi nam komurke X -> zatopiony / O -> pudlo
     public void play() {
         if (map != null) {
             Scanner scanner = new Scanner(System.in);
@@ -166,7 +164,7 @@ public class Game {
                     if (j == 3) {
                         shoot();
                         System.out.println(PRESS_ZERO.string);
-                    }else if ((j != 1) && (j != 2) && (j != 3)){
+                    } else if ((j != 1) && (j != 2) && (j != 3)) {
                         System.out.println(PRESS_ZERO.string);
                     }
                     iterator++;

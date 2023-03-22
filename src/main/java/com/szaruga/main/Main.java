@@ -9,5 +9,6 @@ public class Main {
         WarshipMap map = new WarshipMap(6, 6);
         Game game = new Game(map);
         game.play();
+        map.showMap();
     }
 }

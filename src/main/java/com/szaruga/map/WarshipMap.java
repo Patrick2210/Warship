@@ -1,6 +1,7 @@
 package com.szaruga.map;
 
 import static enums.Strings.*;
+import static enums.CapitalLetters.*;
 
 public class WarshipMap {
 
@@ -44,8 +45,13 @@ public class WarshipMap {
         return isHit;
     }
 
-    public void setHit(boolean hit) {
+    public void setHit(boolean hit, int row, int col) {
         isHit = hit;
+        if (isHit) {
+            map[row][col] = Boolean.parseBoolean(X.letter);
+        } else {
+            map[row][col] = Boolean.parseBoolean(O.letter);
+        }
     }
 
     public void showMap() {

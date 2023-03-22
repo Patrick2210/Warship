@@ -114,6 +114,11 @@ public class Game {
         map.setShip(r, c);
     }
 
+    private void checkIsHit(int row, int col) {
+
+
+    }
+
     private void shoot() {
         Scanner row = new Scanner(System.in);
         Scanner col = new Scanner(System.in);
@@ -123,47 +128,52 @@ public class Game {
         System.out.println(COL.string);
         int c = col.nextInt();
 
-        if (map.getShip(r, c)) {
-            map.setHit(true);
-            System.out.println(HIT_SHIP.string);
+        if (map.isHit()) {
+            System.out.println("That square was already shot");
+        } else {
+            if (map.getShip(r, c)) {
+                map.setHit(true, r, c);
+                System.out.println(HIT_SHIP.string);
 
-        } else if (!map.getShip(r, c)) {
-            map.setHit(false);
-            System.out.println(MISSED_SHIP.string);
+            } else if (!map.getShip(r, c)) {
+                map.setHit(false, r, c);
+                System.out.println(MISSED_SHIP.string);
+            }
         }
     }
 
-    public void busted(int row, int col) {
-
-    }
 
     //TODO zrobic metode ktora wykorzysta isHit() i ustawi nam komurke X -> zatopiony / O -> pudlo
     public void play() {
         if (map != null) {
             Scanner scanner = new Scanner(System.in);
-            start();
-
             int iterator = 0;
-            int i = scanner.nextInt();
+            start();
             do {
+                int i = scanner.nextInt();
                 if (i == 0) {
                     System.out.println(PRESS_ONE.string + PRESS_TWO.string + PRESS_THREE.string);
+
                     int j = scanner.nextInt();
                     if (j == 1) {
                         map.showMap();
+                        System.out.println(PRESS_ZERO.string);
                     }
                     if (j == 2) {
                         shipPosition();
+                        System.out.println(PRESS_ZERO.string);
                     }
                     if (j == 3) {
                         shoot();
-                        //TODO zrobic aby bylo press zero na powrot do menu
+                        System.out.println(PRESS_ZERO.string);
+                    }else if ((j != 1) && (j != 2) && (j != 3)){
+                        System.out.println(PRESS_ZERO.string);
                     }
                     iterator++;
                 } else if (i != 0) {
                     System.out.println(PRESS_ZERO.string);
                 }
-            } while (iterator <= 5);
+            } while (iterator <= 3);
         } else System.out.println(GOODBYE.string);
     }
 }

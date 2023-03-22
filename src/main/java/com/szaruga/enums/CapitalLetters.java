@@ -1,4 +1,4 @@
-package enums;
+package com.szaruga.enums;
 
 public enum CapitalLetters {
     A("A"),

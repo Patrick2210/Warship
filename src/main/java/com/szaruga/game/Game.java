@@ -1,12 +1,12 @@
 package com.szaruga.game;
 
-import static enums.Strings.*;
+import static com.szaruga.enums.Strings.*;
 
 import com.szaruga.map.WarshipMap;
 
 import java.util.Scanner;
 
-import static enums.CapitalLetters.*;
+import static com.szaruga.enums.CapitalLetters.*;
 
 public class Game {
     private WarshipMap map;

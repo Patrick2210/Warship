@@ -114,11 +114,6 @@ public class Game {
         map.setShip(r, c);
     }
 
-    private void checkIsHit(int row, int col) {
-
-
-    }
-
     private void shoot() {
         Scanner row = new Scanner(System.in);
         Scanner col = new Scanner(System.in);

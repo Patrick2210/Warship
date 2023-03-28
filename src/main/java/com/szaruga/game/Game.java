@@ -11,6 +11,7 @@ import static com.szaruga.enums.CapitalLetters.*;
 public class Game {
     private WarshipMap map;
 
+    //pamietaj zawsze nawiasy przy else!
     public Game(WarshipMap map) {
         if (map.getHeight() > 25 && map.getWidth() > 25) {
             System.out.println(FIX_SIZE.string);
@@ -18,10 +19,12 @@ public class Game {
 
     }
 
+    // to jest dobrze
     private void start() {
         System.out.println(WELCOME.string + START.string);
     }
 
+    // tą metodę wrzuć do jakiejś innej klasy, tylko dla czytelności
     private Integer rowConverter(String letter) {
         if (letter.equals(A.letter)) {
             return 0;
@@ -103,6 +106,7 @@ public class Game {
         return 0;
     }
 
+    // to jest dobrze
     private void shipPosition() {
         Scanner row = new Scanner(System.in);
         Scanner col = new Scanner(System.in);
@@ -114,6 +118,7 @@ public class Game {
         map.setShip(r, c);
     }
 
+    // to jest dobrze
     private void shoot() {
         Scanner row = new Scanner(System.in);
         Scanner col = new Scanner(System.in);
@@ -137,6 +142,8 @@ public class Game {
         }
     }
 
+    /* w tej metodzie powinna być pętla która się nigdy nie kończy, while(true). Nie chcesz żeby po 3 razach ci sie kończył program.
+    * Tą pętlę może przerwać tylko wyrzucenie błędu, return lub brake  */
     public void play() {
         if (map != null) {
             Scanner scanner = new Scanner(System.in);
@@ -158,6 +165,7 @@ public class Game {
                     }
                     if (j == 3) {
                         shoot();
+                        // tu po zakończeniu strzelania sprawdź czy zostały jeszcze jakieś statki na mapie, jak nie to break
                         System.out.println(PRESS_ZERO.string);
                     } else if ((j != 1) && (j != 2) && (j != 3)) {
                         System.out.println(PRESS_ZERO.string);

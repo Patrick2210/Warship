@@ -14,7 +14,9 @@ public class Game {
     public Game(WarshipMap map) {
         if (map.getHeight() > 25 && map.getWidth() > 25) {
             System.out.println(FIX_SIZE.string);
-        } else this.map = map;
+        } else {
+            this.map = map;
+        }
 
     }
 

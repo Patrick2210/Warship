@@ -83,6 +83,9 @@ public class Game {
                     }
                     if (j == 3) {
                         shoot();
+                        /* mam watpliwosci odnosnie ponizszej lini, gdyz tak naprawde 2x robi sie ten sam proces
+                        * w 90 chcialbym tylko wyluskac wartosc inta, a nie robic cala petle od nowa, bo to zrobilem w 89
+                         */
                         if (map.getLeftShips() != 0 ){
                             System.out.println(STILL_GOT.string + map.getLeftShips() + SHIPS_LEFT.string);
                             System.out.println(PRESS_ZERO.string);

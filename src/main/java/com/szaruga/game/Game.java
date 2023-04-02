@@ -4,7 +4,6 @@ import static com.szaruga.enums.Strings.*;
 
 import com.szaruga.map.WarshipMap;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -31,7 +30,7 @@ public class Game {
         int r = sc.rowConverter(row.next());
         System.out.println(COL.string);
         int c = col.nextInt();
-        //TODO SPRAWDZIC CZY JUZ NIE MA TAM STATKU
+
         if (map.getShip(r,c)){
             System.out.println(OCCUPIED.string);
         }else {

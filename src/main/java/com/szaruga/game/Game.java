@@ -6,7 +6,6 @@ import com.szaruga.map.WarshipMap;
 
 import java.util.Scanner;
 
-
 public class Game {
     private WarshipMap map;
     SupportClass sc = new SupportClass();
@@ -23,6 +22,7 @@ public class Game {
     private void start() {
         System.out.println(WELCOME.string + START.string);
     }
+
     private void shipPosition() {
         Scanner row = new Scanner(System.in);
         Scanner col = new Scanner(System.in);
@@ -33,9 +33,9 @@ public class Game {
         System.out.println(COL.string);
         int c = col.nextInt();
 
-        if (map.getShip(r,c)){
+        if (map.getShip(r, c)) {
             System.out.println(OCCUPIED.string);
-        }else {
+        } else {
             map.setShip(r, c);
         }
     }
@@ -62,6 +62,7 @@ public class Game {
             }
         }
     }
+
     public void play() {
         if (map != null) {
             Scanner scanner = new Scanner(System.in);
@@ -84,9 +85,9 @@ public class Game {
                     if (j == 3) {
                         shoot();
                         /* mam watpliwosci odnosnie ponizszej lini, gdyz tak naprawde 2x robi sie ten sam proces
-                        * w 90 chcialbym tylko wyluskac wartosc inta, a nie robic cala petle od nowa, bo to zrobilem w 89
+                         * w 90 chcialbym tylko wyluskac wartosc inta, a nie robic cala petle od nowa, bo to zrobilem w 89
                          */
-                        if (map.getLeftShips() != 0 ){
+                        if (map.getLeftShips() != 0) {
                             System.out.println(STILL_GOT.string + map.getLeftShips() + SHIPS_LEFT.string);
                             System.out.println(PRESS_ZERO.string);
                         } else {

@@ -13,10 +13,21 @@ public enum Strings {
     COL("Number for column: "),
     HIT_SHIP("You hit ship!"),
     MISSED_SHIP("You missed..."),
-    PRESS_ONE("Press: Number 1 -> Show map\n"),
-    PRESS_TWO("Press: Number 2 -> Set up your fleet\n"),
-    PRESS_THREE("Press: Number 3 -> Shoot them all!"),
-    PRESS_ZERO("Press Zero to show menu.");
+    PRESS_ONE("Press: Number 1 -> show map\n"),
+    PRESS_TWO("Press: Number 2 -> set up your fleet\n"),
+    PRESS_THREE("Press: Number 3 -> "),
+    SHOOT_THEM_ALL(" shoot them all!"),
+    PRESS_ZERO("Press Zero to show menu."),
+    SQUARE_SHOT("That square was already shot"),
+    STILL_GOT("Still you got "),
+    SHIPS_LEFT(" ships to shoot!"),
+    CONGRATULATION("Congratulation you"),
+    OCCUPIED("This square if already occupied by ship"),
+    MAP_DECRIPTION("\nMAP DECRIPTION:\n"),
+    NUMBER_ZERO("Number 0 on map means -> WATER\n"),
+    NUMBER_ONE("Number 1 on map means -> SHIP\n"),
+    NUMBER_TWO("Number 2 on map means -> HITTED SHIP\n"),
+    NUMBER_THREE("Number 3 on map means -> MISSED SHIP");
     public final String string;
 
     Strings(String str) {

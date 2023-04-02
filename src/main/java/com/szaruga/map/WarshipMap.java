@@ -1,23 +1,26 @@
 package com.szaruga.map;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.szaruga.enums.Strings.*;
-import static com.szaruga.enums.CapitalLetters.*;
 
 public class WarshipMap {
 
     private final int width;
     private final int height;
-    private final boolean[][] map;
-    private boolean isHit;
+    private final int[][] map;
+
 
     public WarshipMap(int inputWidth, int inputHeight) {
         this.width = inputWidth;
         this.height = inputHeight;
-        map = new boolean[height][width];
+        map = new int[height][width];
         if (inputWidth <= 25 && inputHeight <= 25) {
             for (int row = 0; row < height; row++) {
                 for (int col = 0; col < width; col++) {
-
+                    int water = 0;
+                    map[row][col] = water;
                 }
             }
         } else if (inputWidth > 25 && inputHeight > 25) {
@@ -25,12 +28,20 @@ public class WarshipMap {
         }
     }
 
-    public boolean setShip(int row, int col) {
-        return map[row][col] = true;
+    public int setShip(int row, int col) {
+        int ship = 1;
+        return map[row][col] = ship;
     }
 
-    public boolean getShip(int row, int col) {
-        return map[row][col];
+    public int setHit(int row, int col) {
+        int busted = 2;
+        return map[row][col] = busted;
+
+    }
+
+    public int setMiss(int row, int col) {
+        int miss = 3;
+        return map[row][col] = miss;
     }
 
     public int getWidth() {
@@ -41,17 +52,38 @@ public class WarshipMap {
         return height;
     }
 
-    public boolean isHit() {
-        return isHit;
+    public boolean getShip(int row, int col){
+        if (map[row][col] == 0){
+            return false;
+        } else return map[row][col] == 1;
+    }
+    public boolean getSquare(int row, int col) {
+        if (map[row][col] == 0) {
+            return false;
+        }
+        if (map[row][col] == 1) {
+            return true;
+        }
+        return false;
     }
 
-    public void setHit(boolean hit, int row, int col) {
-        isHit = hit;
-        if (isHit) {
-            map[row][col] = Boolean.parseBoolean(X.letter);
-        } else {
-            map[row][col] = Boolean.parseBoolean(O.letter);
+    public Integer getLeftShips() {
+        List<Integer> ships = new ArrayList<>();
+
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < map.length; j++) {
+                if (map[i][j] == 1) {
+                    ships.add(map[i][j]);
+                }
+            }
         }
+        return ships.size();
+    }
+
+    public boolean isHit(int row, int col) {
+        if (map[row][col] == 2 || map[row][col] == 3) {
+            return true;
+        } else return false;
     }
 
     public void showMap() {
@@ -61,5 +93,7 @@ public class WarshipMap {
             }
             System.out.println();
         }
+        System.out.println(MAP_DECRIPTION.string + NUMBER_ZERO.string + NUMBER_ONE.string + NUMBER_TWO.string
+        + NUMBER_THREE.string);
     }
 }

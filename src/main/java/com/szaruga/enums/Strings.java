@@ -26,7 +26,9 @@ public enum Strings {
     MAP_DECRIPTION("\nMAP DECRIPTION:\n"),
     NUMBER_ZERO("Number 0 on map means -> WATER\n"),
     NUMBER_ONE("Number 1 on map means -> SHIP\n"),
+    // nie ma takiego słowa jak HIITED, jest HIT
     NUMBER_TWO("Number 2 on map means -> HITTED SHIP\n"),
+    // tu raczej nie MISSED SHIP a missed SHOT
     NUMBER_THREE("Number 3 on map means -> MISSED SHIP");
     public final String string;
 

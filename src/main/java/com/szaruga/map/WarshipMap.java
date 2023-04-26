@@ -1,8 +1,5 @@
 package com.szaruga.map;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static com.szaruga.enums.Strings.*;
 
 public class WarshipMap {
@@ -10,7 +7,6 @@ public class WarshipMap {
     private final int width;
     private final int height;
     private final int[][] map;
-
 
     public WarshipMap(int inputWidth, int inputHeight) {
         this.width = inputWidth;
@@ -28,20 +24,8 @@ public class WarshipMap {
         }
     }
 
-    public int setShip(int row, int col) {
-        int ship = 1;
-        return map[row][col] = ship;
-    }
-
-    public int setHit(int row, int col) {
-        int busted = 2;
-        return map[row][col] = busted;
-
-    }
-
-    public int setMiss(int row, int col) {
-        int miss = 3;
-        return map[row][col] = miss;
+    public void setSquare(int row, int col, int squareOption) {
+        map[row][col] = squareOption;
     }
 
     public int getWidth() {
@@ -52,38 +36,8 @@ public class WarshipMap {
         return height;
     }
 
-    public boolean getShip(int row, int col){
-        if (map[row][col] == 0){
-            return false;
-        } else return map[row][col] == 1;
-    }
-    public boolean getSquare(int row, int col) {
-        if (map[row][col] == 0) {
-            return false;
-        }
-        if (map[row][col] == 1) {
-            return true;
-        }
-        return false;
-    }
-
-    public Integer getLeftShips() {
-        List<Integer> ships = new ArrayList<>();
-
-        for (int i = 0; i < map.length; i++) {
-            for (int j = 0; j < map.length; j++) {
-                if (map[i][j] == 1) {
-                    ships.add(map[i][j]);
-                }
-            }
-        }
-        return ships.size();
-    }
-
-    public boolean isHit(int row, int col) {
-        if (map[row][col] == 2 || map[row][col] == 3) {
-            return true;
-        } else return false;
+    public int getSquare(int row, int col) {
+        return map[row][col];
     }
 
     public void showMap() {
@@ -94,6 +48,6 @@ public class WarshipMap {
             System.out.println();
         }
         System.out.println(MAP_DECRIPTION.string + NUMBER_ZERO.string + NUMBER_ONE.string + NUMBER_TWO.string
-        + NUMBER_THREE.string);
+                + NUMBER_THREE.string);
     }
 }

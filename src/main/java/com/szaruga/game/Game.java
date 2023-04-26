@@ -80,6 +80,10 @@ public class Game {
 
     public void play() {
         System.out.println(WELCOME.string + START.string);
+        /* Czy w taki sposob jak to napisalem bedzie scanner sie automatycznie zamykac,
+        * na necie pisali ze niby tak wole sie upewnic.
+        * Jezeli zrobilem to dobrze to gitowa. Czy musze zamykac kazdego scanera z osobna w kazdej metodzie?
+        */
         try (Scanner scanner = new Scanner(System.in)) {
             while (true) {
                 int i = scanner.nextInt();

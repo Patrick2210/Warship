@@ -12,6 +12,7 @@ public class WarshipMap {
         this.width = inputWidth;
         this.height = inputHeight;
         map = new int[height][width];
+        // zobacz co się stanie jak wywalisz poniższy kod do linii 26 i uruchomisz apkę i zrobisz show map
         if (inputWidth <= 25 && inputHeight <= 25) {
             for (int row = 0; row < height; row++) {
                 for (int col = 0; col < width; col++) {

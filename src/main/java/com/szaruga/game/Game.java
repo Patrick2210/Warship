@@ -23,12 +23,16 @@ public class Game {
 
     private boolean isShip(int row, int col) {
         int checkSquare = map.getSquare(row, col);
+        // 1 wrzuć do stałej i nazwij to jakoś żeby było wiadomo
+        // na przykład private static final int SHIP = 1;
+        // takie używanie licz w kodzie jest źle widziane, bo później nikt nie wie skąd są te liczby i co oznaczają, tzw. magic numbers
         return checkSquare == 1;
     }
 
     private boolean checkSquare(int row, int col) {
         int checkSquare = map.getSquare(row, col);
         switch (checkSquare) {
+            // to samo co wyżej
             case 2, 3 -> {
                 return true;
             }
@@ -84,6 +88,9 @@ public class Game {
         * na necie pisali ze niby tak wole sie upewnic.
         * Jezeli zrobilem to dobrze to gitowa. Czy musze zamykac kazdego scanera z osobna w kazdej metodzie?
         */
+
+        // tak, ta konstrukcja nazywa się try-with-resources i jeżeli klasa implementuje interfejs AutoCloseable to się sam zamknie
+        // akurat Scanner to implementuje
         try (Scanner scanner = new Scanner(System.in)) {
             while (true) {
                 int i = scanner.nextInt();

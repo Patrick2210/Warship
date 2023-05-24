@@ -5,7 +5,8 @@ import com.szaruga.map.WarshipMap;
 
 public class Main {
     public static void main(String[] args) {
-        WarshipMap map = new WarshipMap(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
+        CommandLineReader cli = new CommandLineReader(args);
+        WarshipMap map = new WarshipMap(cli.valueOne, cli.valueTwo);
         Game game = new Game(map);
         game.play();
     }

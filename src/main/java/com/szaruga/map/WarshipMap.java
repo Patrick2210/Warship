@@ -9,23 +9,9 @@ public class WarshipMap {
     private final int[][] map;
 
     public WarshipMap(int inputWidth, int inputHeight) {
-        this.width = inputWidth;
-        this.height = inputHeight;
+        this.width = Validation.validInput(inputWidth);
+        this.height = Validation.validInput(inputHeight);
         map = new int[height][width];
-        if (inputWidth <= 25 && inputHeight <= 25) {
-            for (int row = 0; row < height; row++) {
-                for (int col = 0; col < width; col++) {
-                    int water = 0;
-                    map[row][col] = water;
-                }
-            }
-        } else if (inputWidth > 25 && inputHeight > 25) {
-            System.out.println(SIZE_MAP.string);
-        }
-    }
-
-    public void setSquare(int row, int col, int squareOption) {
-        map[row][col] = squareOption;
     }
 
     public int getWidth() {
@@ -34,6 +20,10 @@ public class WarshipMap {
 
     public int getHeight() {
         return height;
+    }
+
+    public void setSquare(int row, int col, int squareOption) {
+        map[row][col] = squareOption;
     }
 
     public int getSquare(int row, int col) {

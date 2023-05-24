@@ -33,7 +33,7 @@ public enum Strings {
     MISSED_SHIP("You missed..."),
     PRESS_ONE("Press number 1 -> Show map\n"),
     PRESS_TWO("Press number 2 -> Set up your fleet\n"),
-    PRESS_THREE("Press number 3 -> "),
+    PRESS_THREE("Press number 3 ->"),
     PRESS_FOUR("Press number 4 -> Dimension of map"),
     SHOOT_THEM_ALL(" Shot them all!\n"),
     PRESS_ZERO("Press Zero to show menu."),

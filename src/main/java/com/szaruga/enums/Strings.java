@@ -13,14 +13,6 @@ public enum Strings {
             Minimum integer value is: 5
             Maximum integer value is: 25
             """),
-    DIMENSION_OF_MAP("""
-            Dimension of map:
-                * 5x5   gives Player -> 5 ships
-                * 10x10 gives Player -> 20 ships
-                * 15x15 gives Player -> 45 ships
-                * 20x20 gives Player -> 80 ships
-                * 25x25 gives Player -> 120 ships
-            """),
     MAP_NULL("Map value null"),
     GOODBYE("\nGoodbye"),
     WELCOME("Welcome in WarShips\n"),

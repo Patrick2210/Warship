@@ -167,10 +167,6 @@ public class Game {
                                         System.out.println(PRESS_ZERO.string);
                                     }
                                 }
-                                case 4 -> {
-                                    System.out.println(DIMENSION_OF_MAP.string);
-                                    System.out.println(PRESS_ZERO.string);
-                                }
                             }
                         } else {
                             System.out.println(PRESS_ZERO.string);

@@ -145,8 +145,7 @@ public class Game {
                     if (scanner.hasNextInt()) {
                         int i = scanner.nextInt();
                         if (i == 0) {
-                            System.out.println(PRESS_ONE.string + PRESS_TWO.string
-                                    + PRESS_THREE.string + SHOOT_THEM_ALL.string + PRESS_FOUR.string);
+                            System.out.println(PRESS_ONE.string + PRESS_TWO.string + PRESS_THREE.string + SHOOT_THEM_ALL.string);
                             int j = scanner.nextInt();
                             switch (j) {
                                 case 1 -> {

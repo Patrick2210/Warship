@@ -19,6 +19,8 @@ public class WarshipGame {
     private static final int missShoot = 3;
     private int shipsOnMapPlayerOne;
     private int shipsOnMapPlayerTwo;
+    private int player1Points;
+    private int player2Points;
 
 
     public WarshipGame(PlayerOneMap player1Map, PlayerTwoMap player2Map, Scanner scanner) {
@@ -38,6 +40,7 @@ public class WarshipGame {
         } else if (obj == player2Map) {
             checkSquare = player2Map.getPlayerTwoSquare(row, col);
         }
+        //TODO OGARNAC TAK ABY NIE BYLO STATKOW WIDOCZNYCH NA MAPIE
         return checkSquare == ship;
     }
 
@@ -110,11 +113,13 @@ public class WarshipGame {
                         int hit = 2;
                         if (obj == player1Map) {
                             player1Map.setPlayerOneSquare(r, c, hit);
+                            player2Points++;
                             shipsOnMapPlayerOne--;
                             System.out.println(HIT_SHIP.string);
                             break;
                         } else if (obj == player2Map) {
                             player2Map.setPlayerTwoSquare(r, c, hit);
+                            player1Points++;
                             shipsOnMapPlayerTwo--;
                             System.out.println(HIT_SHIP.string);
                             break;
@@ -163,20 +168,27 @@ public class WarshipGame {
         } while (playerShips != 0);
     }
 
-    private void verificationShoot(int player) {
+    private void playerXWinGame(int player) {
+        if (player == 1 && shipsOnMapPlayerTwo == 0) {
+            System.out.println(PLAYER_ONE.string + CONGRATULATION.string + WIN_SCORE.string + player1Points + GOODBYE.string);
+        } else if (player == 2 && shipsOnMapPlayerOne == 0) {
+            System.out.println(PLAYER_TWO.string + CONGRATULATION.string + WIN_SCORE.string + player2Points + GOODBYE.string);
+        }
+        System.exit(0);
+    }
+
+    private void verificationShipsOnMap(int player) {
         if (player == 1) {
             if (shipsOnMapPlayerTwo > 0) {
                 System.out.println(PLAYER_ONE.string + REMAINING_SHIPS.string + shipsOnMapPlayerTwo + MORE_LEFT.string);
             } else {
-                System.out.println(CONGRATULATION.string + SHOOT_THEM_ALL.string + GOODBYE.string);
-                System.exit(0);
+                playerXWinGame(player);
             }
         } else if (player == 2) {
             if (shipsOnMapPlayerOne > 0) {
                 System.out.println(PLAYER_TWO.string + REMAINING_SHIPS.string + shipsOnMapPlayerOne + MORE_LEFT.string);
             } else {
-                System.out.println(CONGRATULATION.string + SHOOT_THEM_ALL.string + GOODBYE.string);
-                System.exit(0);
+                playerXWinGame(player);
             }
         }
     }
@@ -185,11 +197,11 @@ public class WarshipGame {
         if (player == 1) {
             System.out.println(PLAYER_ONE.string);
             shoot(player2Map);
-            verificationShoot(player);
+            verificationShipsOnMap(player);
         } else if (player == 2) {
             System.out.println(PLAYER_TWO.string);
             shoot(player1Map);
-            verificationShoot(player);
+            verificationShipsOnMap(player);
         }
     }
 
@@ -217,11 +229,14 @@ public class WarshipGame {
                                 if (shipsOnMapPlayerOne == 0 && shipsOnMapPlayerTwo == 0) {
                                     System.out.println(BEFORE_SHOOTING.string + PRESS_ZERO.string);
                                 } else {
-                                    int playerOne = 1;
-                                    int playerTwo = 2;
-                                    playerShootTurn(playerOne);
-                                    playerShootTurn(playerTwo);
-                                    System.out.println(PRESS_ZERO.string);
+                                    int gameTurn = 1;
+                                    do {
+                                        System.out.println(WILDCARDS.string + GAME_TURN.string
+                                                + gameTurn + WILDCARDS.string);
+                                        playerShootTurn(1);
+                                        playerShootTurn(2);
+                                        gameTurn++;
+                                    } while (true);
                                 }
                             }
                         }

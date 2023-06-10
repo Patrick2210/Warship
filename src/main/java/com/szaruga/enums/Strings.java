@@ -23,15 +23,15 @@ public enum Strings {
     PATTERN("."),
     HIT_SHIP("You hit ship!"),
     MISSED_SHIP("You missed..."),
-    PRESS_ONE("Press number 1 -> Show map\n"),
-    PRESS_TWO("Press number 2 -> Set up your fleet\n"),
+    PRESS_ONE("Press number 1 -> show map\n"),
+    PRESS_TWO("Press number 2 -> set up your fleet\n"),
     PRESS_THREE("Press number 3 ->"),
-    SHOOT_THEM_ALL(" Shot them all!\n"),
+    SHOOT_THEM_ALL(" shot them all!\n"),
     PRESS_ZERO("Press Zero to show menu."),
     PLAYER_ONE("***** Player One *****"),
     PLAYER_TWO("***** Player Two *****"),
     SQUARE_SHOT("That square was already shot"),
-    REMAINING_SHIPS("Remainig on battlefield: "),
+    REMAINING_SHIPS("\nRemaining on battlefield: "),
     MORE_LEFT(" more to shoot!"),
     CONGRATULATION("Congratulation you"),
     OCCUPIED("This position is already occupied by ship..."),
@@ -44,7 +44,8 @@ public enum Strings {
     WRONG_INPUT_POSITION_SHIP("Unfortunately there is mistake in position place.\n" +
             "Please press capital letter for row & number for column in console, e.g: A1, D12"),
     WRONG_INPUT_POSITION_SHOOT("Unfortunately there is mistake in shoot position.\n" +
-            "Please press capital letter for row & number for column in console, e.g: B3, F14");;
+            "Please press capital letter for row & number for column in console, e.g: B3, F14"),
+    ERROR("Error");
     public final String string;
 
     Strings(String str) {

@@ -40,7 +40,6 @@ public class WarshipGame {
         } else if (obj == player2Map) {
             checkSquare = player2Map.getPlayerTwoSquare(row, col);
         }
-        //TODO OGARNAC TAK ABY NIE BYLO STATKOW WIDOCZNYCH NA MAPIE
         return checkSquare == ship;
     }
 

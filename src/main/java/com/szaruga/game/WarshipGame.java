@@ -155,12 +155,14 @@ public class WarshipGame {
     }
 
     private void playerPutShip(Object obj) {
+        int playerShips = amountOfShips(obj);
         if (obj == player1Map) {
             System.out.println(PLAYER_ONE.string);
+            System.out.println("Amount ships to locate on map: " + playerShips);
         } else {
             System.out.println(PLAYER_TWO.string);
+            System.out.println("Amount ships to locate on map: " + playerShips);
         }
-        int playerShips = amountOfShips(obj);
         do {
             putShip(obj);
             playerShips--;

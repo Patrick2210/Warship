@@ -15,7 +15,7 @@ public class Validation {
                 System.out.println(SIZE_MAP.string + VALID_NUMBER.string);
                 if (sc.hasNextInt()) {
                     int scInput = sc.nextInt();
-                    if (scInput >= 5 && scInput <= 25) {
+                    if (scInput >= 5 && scInput <= 26) {
                         return scInput;
                     } else {
                         System.out.println(INVALID_NUMBER.string);

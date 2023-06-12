@@ -11,7 +11,7 @@ public enum Strings {
     VERTICAL_BAR("|"),
     SIZE_MAP("""
             Minimum integer value is: 5
-            Maximum integer value is: 25
+            Maximum integer value is: 26
             """),
     MAP_NULL("Map value null"),
     GOODBYE("\nGoodbye"),

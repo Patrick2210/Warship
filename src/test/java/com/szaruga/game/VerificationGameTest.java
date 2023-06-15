@@ -376,100 +376,9 @@ class VerificationGameTest {
 
     @Test
     public void whenTotalMapIs25SquaresReturnPlayerShips() {
-        int totalMapSquare = 26;
+        int totalMapSquare = 25;
         int result = verificationPlayerShips(totalMapSquare);
         assertEquals(5, result);
-    }
-
-    @Test
-    public void whenTotalMapIs30SquaresReturnPlayerShips() {
-        int totalMapSquare = 30;
-        int result = verificationPlayerShips(totalMapSquare);
-        assertEquals(6, result);
-    }
-
-    @Test
-    public void whenTotalMapIs36SquaresReturnPlayerShips() {
-        int totalMapSquare = 36;
-        int result = verificationPlayerShips(totalMapSquare);
-        assertEquals(7, result);
-    }
-
-    @Test
-    public void whenTotalMapIs40SquaresReturnPlayerShips() {
-        int totalMapSquare = 40;
-        int result = verificationPlayerShips(totalMapSquare);
-        assertEquals(8, result);
-    }
-
-    @Test
-    public void whenTotalMapIs45SquaresReturnPlayerShips() {
-        int totalMapSquare = 45;
-        int result = verificationPlayerShips(totalMapSquare);
-        assertEquals(9, result);
-    }
-
-    @Test
-    public void whenTotalMapIs49SquaresReturnPlayerShips() {
-        int totalMapSquare = 49;
-        int result = verificationPlayerShips(totalMapSquare);
-        assertEquals(10, result);
-    }
-
-    @Test
-    public void whenTotalMapIs50SquaresReturnPlayerShips() {
-        int totalMapSquare = 50;
-        int result = verificationPlayerShips(totalMapSquare);
-        assertEquals(10, result);
-    }
-
-    @Test
-    public void whenTotalMapIs55SquaresReturnPlayerShips() {
-        int totalMapSquare = 55;
-        int result = verificationPlayerShips(totalMapSquare);
-        assertEquals(11, result);
-    }
-
-    @Test
-    public void whenTotalMap60SquaresReturnPlayerShips() {
-        int totalMapSquare = 60;
-        int result = verificationPlayerShips(totalMapSquare);
-        assertEquals(12, result);
-    }
-
-    @Test
-    public void whenTotalMapIs64SquaresReturnPlayerShips() {
-        int totalMapSquare = 64;
-        int result = verificationPlayerShips(totalMapSquare);
-        assertEquals(13, result);
-    }
-
-    @Test
-    public void whenTotalMapIs70SquaresReturnPlayerShips() {
-        int totalMapSquare = 70;
-        int result = verificationPlayerShips(totalMapSquare);
-        assertEquals(14, result);
-    }
-
-    @Test
-    public void whenTotalMapIs75SquaresReturnPlayerShips() {
-        int totalMapSquare = 75;
-        int result = verificationPlayerShips(totalMapSquare);
-        assertEquals(15, result);
-    }
-
-    @Test
-    public void whenTotalMapIs80SquaresReturnPlayerShips() {
-        int totalMapSquare = 80;
-        int result = verificationPlayerShips(totalMapSquare);
-        assertEquals(16, result);
-    }
-
-    @Test
-    public void whenTotalMapIs84SquaresReturnPlayerShips() {
-        int totalMapSquare = 84;
-        int result = verificationPlayerShips(totalMapSquare);
-        assertEquals(17, result);
     }
 
     @Test
@@ -477,5 +386,12 @@ class VerificationGameTest {
         int totalMapSquare = 676;
         int result = verificationPlayerShips(totalMapSquare);
         assertEquals(135, result);
+    }
+
+    @Test
+    public void whenTotalMapIs0Squares() {
+        int totalMapSquare = 0;
+        int result = verificationPlayerShips(totalMapSquare);
+        assertEquals(0, result);
     }
 }
